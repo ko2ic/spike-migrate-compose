@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ko2ic.spike.migrate.compose.ui.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".ui.MainFragment">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:onClick="@{() -> viewModel.onClickToCustomView()}"
+            android:text="旧来のカスタムボタンをComposeで使う(AndroidView)"
+            android:textAllCaps="false" />
+
+        <com.ko2ic.spike.migrate.compose.ui.view.CountUpButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:onClick="@{() -> viewModel.onClickToXmlView()}"
+            android:text="xmlレイアウトをComposeで使う(AndroidViewBinding)"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:onClick="@{() -> viewModel.onClickToComposeView()}"
+            android:text="xmlレイアウトの中でComposeを使う(ComposeView)"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</layout>
